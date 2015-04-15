@@ -1,0 +1,4 @@
+name: eoslookup
+path: build/libs/eos-lookup-0.0.1.war
+services:
+  - eoslookup-db
