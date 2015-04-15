@@ -1,0 +1,48 @@
+buildscript {
+    ext {
+        springBootVersion = '1.2.3.RELEASE'
+    }
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath group: 'org.springframework.boot', name: 'spring-boot-gradle-plugin', version: springBootVersion
+        classpath group: 'io.spring.gradle', name: 'dependency-management-plugin', version: '0.4.1.RELEASE'
+    }
+}
+
+plugins {
+    id 'java'
+    id 'war'
+    id 'idea'
+}
+
+apply plugin: 'spring-boot'
+apply plugin: 'io.spring.dependency-management'
+
+assert gradle.gradleVersion == '2.3'
+
+sourceCompatibility = '1.8'
+
+group = 'io.pivotal.labs'
+version = '0.0.1'
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-thymeleaf'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web'
+
+    runtime group: 'org.postgresql', name: 'postgresql', version: '9.4-1201-jdbc41'
+    providedRuntime group: 'org.springframework.boot', name: 'spring-boot-starter-tomcat'
+
+    testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test'
+}
+
+idea.module {
+    outputDir = file('.idea/classes/main')
+    testOutputDir = file('.idea/classes/test')
+}
