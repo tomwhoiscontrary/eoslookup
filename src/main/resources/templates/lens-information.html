@@ -8,6 +8,12 @@
 
 <h1>Lens Information</h1>
 
+<h2>Cameras</h2>
+
+<ul>
+  <li th:each="camera : ${cameras}" th:text="${camera.name}"></li>
+</ul>
+
 </body>
 
 </html>
