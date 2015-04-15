@@ -55,9 +55,9 @@ public class CompatibilityControllerTests {
         String responseContent = makeRequest(get("/"));
 
         assertThat(responseContent, allOf(
-                containsString("<li>Canon 123</li>"),
-                containsString("<li>Canon A</li>"),
-                containsString("<li>Canon EOS</li>")));
+                containsString("<option>Canon 123</option>"),
+                containsString("<option>Canon A</option>"),
+                containsString("<option>Canon EOS</option>")));
     }
 
     private String makeRequest(MockHttpServletRequestBuilder request) throws Exception {

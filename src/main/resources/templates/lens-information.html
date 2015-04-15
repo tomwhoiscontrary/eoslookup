@@ -10,9 +10,9 @@
 
 <h2>Cameras</h2>
 
-<ul>
-  <li th:each="camera : ${cameras}" th:text="${camera.name}"></li>
-</ul>
+<select>
+  <option th:each="camera : ${cameras}" th:text="${camera.name}"></option>
+</select>
 
 </body>
 
